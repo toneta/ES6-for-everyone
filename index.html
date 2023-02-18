@@ -5,8 +5,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    
+    <h1>Hello</h1>
+    <script>
+        var width;
+        function setWdith() {
+            width = 100;
+        };
+        setWdith();
+        console.log(width);
+
+        var age = 100;
+        if(age>10) {
+            let dogYears = age * 7; //cant redeclare let twice in the same scope
+            console.log(`You are ${dogYears} old in dog years`);
+        }
+
+        let winner = false;
+        if (age > 10) {
+            let winner = true;
+        }
+
+        var person = {
+            name: 'Toni',
+            age: 32
+        }
+    </script>
 </body>
 </html>
