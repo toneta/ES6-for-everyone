@@ -10,7 +10,15 @@
 <body>
     <h1>Hello</h1>
     <script>
-        
+        const names = ['toni', 'mitko', 'ivcho'];
+        const fullNames = names.map(function(name){
+            return `${name} slavov`;
+        });
+        const fullNames2 = names.map((name) => {
+            return `${name} slavov`;
+        });
+        console.log(fullNames);
+        console.log(fullNames2);
     </script>
 </body>
 </html>
