@@ -26,12 +26,36 @@
             console.log(this);
             person.score();
         });
+
+        //
         const person = {
             points: 23,
             score() {
                 this.points++;
                 console.log(this);
             }
+        }
+        //
+        class Car {
+            constructor(make, color) {
+                this.make = make;
+                this.color = color;
+            }
+        }
+
+        const beemer = new Car('bmw', 'blue');
+        const subie = new Car('subaru', 'yellow');
+
+        Car.prototype.summarize = function() {
+            return `This car is ${this.color} ${this.make}`
+        };
+        //
+        const childOrder = function() {
+            const children = Array.from(arguments);
+            return children.map((child, i) => {
+                return `${child} was ${i}`;
+            });
+            console.log(arguments);
         }
     </script>
 </body>
