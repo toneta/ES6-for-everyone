@@ -54,6 +54,10 @@
   });
   // reduce to get total
 
+  const total = seconds.reduce(function(reducer, current) {
+    return reducer + current;
+  })
+
   // 🔥 This can also be done in a single .reduce(), but we're practicing arrow functions here, so chain them!
 
 </script>
