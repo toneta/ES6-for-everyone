@@ -27,6 +27,18 @@
   `;
 
   document.querySelector(".main").innerHTML = markup;
+
+  const dogs = [
+    { name: "dogo", age: 2 },
+    { name: "kitty", age: 4 },
+    { name: "guinea", age: 1 }
+  ];
+
+  const markup2 = `<ul class="dogs">
+  ${dogs.map(dog => `<li>${dog.name} is ${dog.age*7}</li>`).join('')}
+</ul>`;
+
+document.querySelector(".main").innerHTML += markup2;
 </script>
 </body>
 </html>
