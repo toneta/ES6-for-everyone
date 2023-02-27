@@ -42,18 +42,21 @@
     .filter(item => item.textContent.includes('Flexbox'))
   // map down to a list of time strings
 
-    .map(item => item.dataset.time);
+    .map(item => item.dataset.time)
 
   // map to an array of seconds
-  const seconds = filterdVideoArray.map(function(time) {
-    const hours = time.split(':');
-    return (hours[0]*60) + Number(hours[1]);
-  });
+    .map(function(time) {
+    const hours = time.split(':').map(hour => parseFloat(hour));
+    return (hours[0]*60) + hours[1];
+  })
   // reduce to get total
 
-  const total = seconds.reduce(function(reducer, current) {
-    return reducer + current;
-  })
+    .reduce(function(reducer, current) {
+    return reducer + current, 0;
+  });
+
+  console.log(filterdVideoArray);
+
 
   // 🔥 This can also be done in a single .reduce(), but we're practicing arrow functions here, so chain them!
 
