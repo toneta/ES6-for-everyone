@@ -39,6 +39,44 @@
 </ul>`;
 
 document.querySelector(".main").innerHTML += markup2;
+
+const song = {
+  name: 'dying to live', 
+  artist: 'tupac'
+}
+
+const markup3 = `<div class="song">
+  <p>
+    ${song.name} - ${song.artist} <br>
+    ${song.feat ? `featuring ${song.feat}` : '' }
+
+  </p>
+</div>`;
+
+document.querySelector(".main").innerHTML += markup3;
+
+const beer = {
+  name: 'zagorka',
+  brewery: 'zagorka',
+  kws: ['pale', 'cloudy']
+};
+
+const beerMarkup = `
+`;
+
+function renderKeywords(kws) {
+  return `
+  <ul>
+    ${kws.map(kw => `<li>${kw}</li>`)}
+  </ul>
+  `;
+}
 </script>
+
+<div class="beer">
+  <h2>${beer.name}</h2>
+  <p class="brewery">${beer.brewery}</p>
+  ${renderKeywords(beer.kws)};
+</div>
 </body>
 </html>
