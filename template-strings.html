@@ -62,21 +62,22 @@ const beer = {
 };
 
 const beerMarkup = `
+<div class="beer">
+  <h2>${beer.name}</h2>
+  <p class="brewery">${beer.brewery}</p>
+  ${renderKeywords(beer.kws)}
+</div>
 `;
 
 function renderKeywords(kws) {
   return `
   <ul>
-    ${kws.map(kw => `<li>${kw}</li>`)}
+    ${kws.map(kw => `<li>${kw}</li>`).join('')}
   </ul>
-  `;
+  `
 }
-</script>
 
-<div class="beer">
-  <h2>${beer.name}</h2>
-  <p class="brewery">${beer.brewery}</p>
-  ${renderKeywords(beer.kws)};
-</div>
+document.querySelector(".main").innerHTML += beerMarkup;
+</script>
 </body>
 </html>
