@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tagged Template literals</title>
+  <style>
+    .h1 {
+        color: yellow;
+        font-weight: 600;
+        font-size: 1.5em;
+    }
+  </style>
+</head>
+<body>
+<div class="main"></div>
+<script>
+    function highlights(strings, ...values) {
+        let str = '';
+        strings.forEach((string, i) => {
+            str += `${string} <span class="h1">${values[i] || ''}</span>`;
+        });
+        return str;
+    }
+    const name = "Ivcho";
+    const age = 3;
+    const sentence = highlights`My kids name is ${name} and he is ${age} years old`;
+    console.log(sentence);
+    document.querySelector('.main').innerHTML = sentence;
+</script>
+</body>
+</html>
