@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sanitize User Data</title>
+  <style>
+    
+  </style>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/2.0.12/purify.min.js"></script>
+</head>
+<body>
+<div class="main"></div>
+<script>
+    function sanitize(strings, ...values) {
+        const dirty = strings.reduce((prev, next, i) => `${prev}, ${next}, ${values[i] || ''}`, '');
+
+        return DOMPurify.sanitize(dirty);
+    }
+    const firstName = "toni";
+    const aboutMe = sanitize`<img src="https://images.unsplash.com/photo-1508185159346-bb1c5e93ebb4?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=55cf14db6ed80a0410e229368963e9d8&auto=format&fit=crop&w=1900&q=80" onload="alert('hey')">`;
+
+    const userData = `<h1>${firstName}</h1>
+    <p>${aboutMe}</p>`
+    const main = document.querySelector(".main");
+    main.innerHTML = userData;
+</script>
+</body>
+</html>
