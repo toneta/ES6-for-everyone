@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Destructuring Objects</title>
+</head>
+<body>
+<div class="main"></div>
+<script>
+  const toni = {
+    firstName: "Antoniya",
+    lastName: "Slavova",
+    country: "Bulgaria",
+    city: "Varna",
+    links: {
+        fb: "fb",
+        github: "@toneta91" ,
+        twitter: "toneta91"
+    }
+  }
+
+  const { firstName, lastName } = toni;
+  const { twitter:tweet, fb:facebook } = toni.links;
+
+  var settings = { width: 300, color: 'black' };
+  const { width = 100, height = 200, color = 'blue', fontSize = '12px' } = settings;
+</script>
+</body>
+</html>
