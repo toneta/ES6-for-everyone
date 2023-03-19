@@ -19,6 +19,12 @@
 
     const { GPB, MEX, AUD } = convertCurrency(100);
     console.log(GPB, MEX);
+
+    function tipCalc({ total, tip = 0.15, tax = 0.14 }) {
+        return total + (total * tip) + (total * tax);
+    }
+
+    const bill = tipCalc({total: 100})
 </script>
 </body>
 </html>
