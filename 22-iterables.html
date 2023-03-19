@@ -11,8 +11,15 @@
     for (let index = 0; index < foods.length; index++) {
         const element = foods[index];
         console.log(element);
-        
     }
+
+    for (const key in foods) {
+        console.log(foods[key]);
+    }
+
+    foods.forEach(food => {
+        console.log(food);
+    });
 </script>
 </body>
 </html>
