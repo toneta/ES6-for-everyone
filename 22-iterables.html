@@ -13,13 +13,20 @@
         console.log(element);
     }
 
-    for (const key in foods) {
+    for (const key in foods) { // cannot break and continue
         console.log(foods[key]);
     }
 
     foods.forEach(food => {
         console.log(food);
     });
+
+    for (const food of foods) { // best one
+        if(food === 'salad'){
+            continue;
+        }
+        console.log(food);
+    }
 </script>
 </body>
 </html>
