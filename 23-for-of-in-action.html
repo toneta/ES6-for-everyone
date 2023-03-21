@@ -5,7 +5,18 @@
   <title>For of in Action</title>
 </head>
 <body>
-<div class="main"></div>
+<div class="main">
+    <p>hi im p 01</p>
+    <p>hi im p 02</p>
+    <p>hi im p 03</p>
+    <p>hi im p 04</p>
+    <p>hi im p 05</p>
+    <p>hi im p 06</p>
+    <p>hi im p 07</p>
+    <p>hi im p 08</p>
+    <p>hi im p 09</p>
+    <p>hi im p 10</p>    
+</div>
 <script>
     const foods = ['ribs', 'sandwich', 'salad', 'cheesecake'];
 
@@ -14,7 +25,23 @@
     }
 
     function addUpNumbers() {
-        
+        let total = 0;
+        for (const iterator of arguments) {
+            total += iterator;
+        }
+        console.log(total);
+    }
+
+    addUpNumbers(10, 20, 4, 1);
+
+    // 
+
+    const paragraphs = document.querySelectorAll('p');
+
+    for (const paragraph of paragraphs) {
+        paragraph.addEventListener('click', function() {
+            console.log(this.textContent);
+        })
     }
 </script>
 </body>
